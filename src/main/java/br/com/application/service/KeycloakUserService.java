@@ -16,12 +16,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class KeycloakUserService {
 
-    @Value("${keycloak.realm}")
-    private String realm;
-
     @Autowired
     private final Keycloak keycloak;
-
+    @Value("${keycloak.realm}")
+    private String realm;
 
     public List<UserRepresentation> findAllUsers() {
         return keycloak.realm(realm).users().list();
@@ -33,16 +31,16 @@ public class KeycloakUserService {
         return keycloak.realm(realm).users().create(user);
     }
 
+
+    public void deleteUser(final String id) {
+        keycloak.realm(realm).users().delete(id);
+    }
+
     public void updatePassword(final UserRequest request, final String id) {
         UserRepresentation userRepresentation = keycloak.realm(realm).users().get(id).toRepresentation();
-
         CredentialRepresentation password = preparePasswordRepresentation(request.getPassword());
         UserRepresentation user = prepareUserRepresentation(request, password);
         user.setCredentials(List.of(password));
-    }
-
-    public List<UserRepresentation> findByUsername(final String username) {
-        return keycloak.realm(realm).users().search(username);
     }
 
     public UserRepresentation findUserById(final String id) {
@@ -52,7 +50,6 @@ public class KeycloakUserService {
     public List<UserRepresentation> findUserByParams(final String username, final String firstname, final String lastname, final String email, final Integer first) {
         return keycloak.realm(realm).users().search(username, firstname, lastname, email, first, null);
     }
-
 
     private CredentialRepresentation preparePasswordRepresentation(String password) {
         CredentialRepresentation cR = new CredentialRepresentation();

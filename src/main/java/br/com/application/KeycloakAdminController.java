@@ -5,6 +5,7 @@ import br.com.application.service.KeycloakUserService;
 import lombok.RequiredArgsConstructor;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.keycloak.util.JsonSerialization;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,12 +22,13 @@ public class KeycloakAdminController {
 
     private final KeycloakUserService keycloakUserService;
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping(path = "/users")
     @PreAuthorize("hasAnyAuthority('ROLE_user')")
     public List<UserRepresentation> getAllUsers() {
 
 //        try {
-        return keycloakUserService.findAllUsers();
+            return keycloakUserService.findAllUsers();
 //        } catch (ClientErrorException e) {
 //            handleClientErrorException(e);
 //        } catch (Exception e) {
@@ -37,30 +39,44 @@ public class KeycloakAdminController {
 //                e.printStackTrace();
 //            }
 //        }
+//
+//        return null;
     }
 
+
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/users")
     @PreAuthorize("hasAnyAuthority('ROLE_user')")
     public void createUser(@RequestBody UserRequest userRequest) {
         keycloakUserService.createUser(userRequest);
     }
 
-    @PatchMapping(path = "/users/{id}")
-    @PreAuthorize("hasAnyAuthority('ROLE_user')")
-    public void updatePassword(@RequestBody UserRequest userRequest, @PathVariable String id) {
-        keycloakUserService.updatePassword(userRequest, id);
-    }
-
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping(path = "/users/{id}")
     @PreAuthorize("hasAnyAuthority('ROLE_user')")
     public UserRepresentation findUserById(@PathVariable String id) {
         return keycloakUserService.findUserById(id);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @PatchMapping(path = "/users/{id}")
+    @PreAuthorize("hasAnyAuthority('ROLE_user')")
+    public void updatePassword(@RequestBody UserRequest userRequest, @PathVariable String id) {
+        keycloakUserService.updatePassword(userRequest, id);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping(path = "/users/search")
     @PreAuthorize("hasAnyAuthority('ROLE_user')")
     public List<UserRepresentation> findUserByParams(@RequestParam(required = false) String username, @RequestParam(required = false) String firstname, @RequestParam(required = false) String lastname, @RequestParam(required = false) String email, @RequestParam(required = false) Integer first) {
         return keycloakUserService.findUserByParams(username, firstname, lastname, email, first);
+    }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @DeleteMapping(path = "/users/{id}")
+    @PreAuthorize("hasAnyAuthority('ROLE_user')")
+    public void deleteUser(@PathVariable String id) {
+        keycloakUserService.deleteUser(id);
     }
 
     private static void handleClientErrorException(ClientErrorException e) {
