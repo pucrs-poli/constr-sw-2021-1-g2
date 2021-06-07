@@ -1,1 +1,1 @@
-# keycloak-admin-client-api-spring-oauth2
+# resources
