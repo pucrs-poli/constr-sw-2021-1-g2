@@ -1,1 +1,3 @@
-# constr-sw-2021-1-g2
+# Disciplina de construção de software
+
+#### Documentação dentro da API dentro do diretório da respectiva API
