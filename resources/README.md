@@ -10,6 +10,7 @@ https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYctq6/view?usp=shari
 - [ ] Configuração do mongodb no AWS
 - [ ] Configuração do API no AWS
 - [ ] Ajustar bugs na validação de reservas
+- [ ] Consumir microserviços de lessons
 
 ## Documentação
 Documentação via localhost através da url http://localhost:8282/swagger-ui.html
