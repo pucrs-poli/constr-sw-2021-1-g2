@@ -1,0 +1,11 @@
+br\com\application\KeycloakSpringOAuth2Application.class
+br\com\application\service\KeycloakUserService.class
+br\com\application\KeycloakAdminController.class
+br\com\application\security\SecurityContextUtils.class
+br\com\application\security\JwtAccessTokenCustomizer.class
+br\com\application\config\KeycloakClientConfig.class
+br\com\application\security\SecurityProperties$Cors.class
+br\com\application\security\SecurityConfigurer.class
+br\com\application\security\SecurityProperties.class
+META-INF\spring-configuration-metadata.json
+br\com\application\request\UserRequest.class

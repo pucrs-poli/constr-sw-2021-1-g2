@@ -1,0 +1,34 @@
+{
+  "groups": [
+    {
+      "name": "rest.security",
+      "type": "br.com.application.security.SecurityProperties",
+      "sourceType": "br.com.application.security.SecurityProperties"
+    },
+    {
+      "name": "rest.security.cors",
+      "type": "br.com.application.security.SecurityProperties$Cors",
+      "sourceType": "br.com.application.security.SecurityProperties",
+      "sourceMethod": "getCors()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rest.security.api-matcher",
+      "type": "java.lang.String",
+      "sourceType": "br.com.application.security.SecurityProperties"
+    },
+    {
+      "name": "rest.security.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "br.com.application.security.SecurityProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "rest.security.issuer-uri",
+      "type": "java.lang.String",
+      "sourceType": "br.com.application.security.SecurityProperties"
+    }
+  ],
+  "hints": []
+}
