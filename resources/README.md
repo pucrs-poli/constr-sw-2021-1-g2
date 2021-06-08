@@ -1,6 +1,20 @@
 # API de Recursos
 
-# Configurações
+## Collections do postman
+
+https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYctq6/view?usp=sharing
+
+### TODOS
+- [ ] Diagrama de classes
+- [ ] Terminar testes das rotas
+- [ ] Configuração do mongodb no AWS
+- [ ] Configuração do API no AWS
+- [ ] Ajustar bugs na validação de reservas
+
+## Documentação
+Documentação via localhost através da url http://localhost:8282/swagger-ui.html
+
+## Configurações
 
 Dependência do banco de dados do mmongodb
 
@@ -29,7 +43,7 @@ spring:
 
 Como a API faz uso do Swagger é possível acessar a documentação via localhost através da url http://localhost:8282/swagger-ui.html. Neste link é possível ver todas as operações disponibilizadas na API de recursos. As principais são as operações que envolvem os controladores de Recursos (Resources), Tipo de Recursos (Resources-Types) e Reservation (Reservas) que está imbutida no controlador de Recursos, cada uma dessas três operações possui sua própria tabela no banco de dados
 
-# Estrutura de pastas
+## Estrutura de pastas
 
 * `config`: configurações adicionais, como beans, etc.
 * `domain`: todas as classes criadas para o domínio da aplicação
