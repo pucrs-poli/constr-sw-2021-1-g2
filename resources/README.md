@@ -3,6 +3,7 @@
 ## Collections do postman
 
 collection aws: https://drive.google.com/file/d/1buE-gYBGSnxDDlANUpVO0DTCS7uhkb_M/view?usp=sharing (Requests já prontos)
+
 collection local: https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYctq6/view?usp=sharing (Requests já prontos)
 
 ### TODOS
@@ -14,7 +15,9 @@ collection local: https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYc
 - [ ] Consumir microserviços de lessons
 
 ## Documentação
+
 Documentação via AWS através da url http://ec2-54-232-199-57.sa-east-1.compute.amazonaws.com/swagger-ui.html
+
 Documentação via localhost através da url http://localhost:8282/swagger-ui.html
 
 ## Configurações
