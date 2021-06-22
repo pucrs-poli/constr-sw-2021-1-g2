@@ -2,17 +2,19 @@
 
 ## Collections do postman
 
-https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYctq6/view?usp=sharing
+collection aws: https://drive.google.com/file/d/1buE-gYBGSnxDDlANUpVO0DTCS7uhkb_M/view?usp=sharing (Requests já prontos)
+collection local: https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYctq6/view?usp=sharing (Requests já prontos)
 
 ### TODOS
 - [ ] Diagrama de classes
 - [ ] Terminar testes das rotas
-- [ ] Configuração do mongodb no AWS
-- [ ] Configuração do API no AWS
+- [X] Configuração do mongodb no AWS
+- [X] Configuração do API no AWS
 - [ ] Ajustar bugs na validação de reservas
 - [ ] Consumir microserviços de lessons
 
 ## Documentação
+Documentação via AWS através da url http://ec2-54-232-199-57.sa-east-1.compute.amazonaws.com/swagger-ui.html
 Documentação via localhost através da url http://localhost:8282/swagger-ui.html
 
 ## Configurações
@@ -25,7 +27,8 @@ Dependência do banco de dados do mmongodb
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 ```
-Configuração da porta e de acesso ao banco local do mongodb.
+Configuração da porta e de acesso ao banco configurado no ATLAS https://www.mongodb.com/cloud/atlas.
+
 
 ```yml
 server:
@@ -35,9 +38,7 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
-      database: resource_db
-      host: localhost
-      port: 27017
+      uri: mongodb+srv://user:user@resources-db.y16jp.mongodb.net/resources-db?retryWrites=true&w=majority
 ```
 
 ## Endpoints
