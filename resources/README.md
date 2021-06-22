@@ -7,6 +7,8 @@ collection aws: https://drive.google.com/file/d/1buE-gYBGSnxDDlANUpVO0DTCS7uhkb_
 collection local: https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYctq6/view?usp=sharing (Requests já prontos)
 
 ### TODOS
+obs: alguns desses TODOS provavelmente necessitarem reajustes devido a solicitações do grupo que está desenvolvendo o front da API, portanto prevendo que haverão ajustes no backend algumas das tarefas abaixo listadas, se feitas teriam retrabalho.
+
 - [ ] Diagrama de classes
 - [ ] Terminar testes das rotas
 - [X] Configuração do mongodb no AWS (foi subido o banco no serviço do ATLAS)
