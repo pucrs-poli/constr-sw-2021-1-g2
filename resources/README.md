@@ -9,7 +9,7 @@ collection local: https://drive.google.com/file/d/1AIMQPXpgoFVBtsTow1JWD-902juYc
 ### TODOS
 - [ ] Diagrama de classes
 - [ ] Terminar testes das rotas
-- [X] Configuração do mongodb no AWS
+- [X] Configuração do mongodb no AWS (foi subido o banco no serviço do ATLAS)
 - [X] Configuração do API no AWS
 - [ ] Ajustar bugs na validação de reservas
 - [ ] Consumir microserviços de lessons
